@@ -62,7 +62,7 @@
       const contactForm = document.getElementById('contactForm');
       const scrollCircle = document.getElementById('scrollCircle');
 
-      // Intersection Observer for lower section fade-in animation
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
@@ -74,18 +74,18 @@
 
       observer.observe(lowerSection);
 
-      // Email Validation
+
       contactForm.addEventListener('submit', function(event) {
         const emailInput = document.getElementById('email').value;
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
         if (!emailPattern.test(emailInput)) {
           alert('Please enter a valid email address.');
-          event.preventDefault(); // Prevent form submission if email is invalid
+          event.preventDefault();
         }
       });
 
-      // Scroll to form on circle click
+
       scrollCircle.addEventListener('click', function() {
         lowerSection.scrollIntoView({ behavior: 'smooth' });
       });
